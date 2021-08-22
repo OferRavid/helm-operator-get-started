@@ -1,0 +1,25 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ .Values.cleaner.name }}
+spec:
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: db-cleeanup
+              image: docker.io/bitnami/mongodb:4.4.8-debian-10-r9
+              command: ["mongo", $(MONGODBURL), --eval, "db.echos.drop()"]
+
+              env:
+                - name: MONGODBURL
+                  valueFrom:
+                    secretKeyRef:
+                      name: {{ .Values.secret.name }}
+                      key: mongo-db-url
+          restartPolicy: {{ .Values.cleaner.restartPolicy }}
+      backoffLimit: {{ .Values.cleaner.backoffLimit }}
+
+  schedule: {{ .Values.cleaner.schedule | quote }}
+
