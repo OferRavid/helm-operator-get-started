@@ -5,7 +5,7 @@ metadata:
   namespace: {{ .Values.cert.nspace }}
 spec:
   acme:
-    server: {{ .Values.cert.server.stage }}
+    server: {{ .Values.cert.server.prod }}
     email: {{ .Values.cert.email }}
     privateKeySecretRef:
       name: {{ .Values.cert.privKeyName }}
