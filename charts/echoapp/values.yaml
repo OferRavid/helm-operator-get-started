@@ -58,7 +58,7 @@ StorageClass:
 ingress:
   name: tls-ingress
   className: "nginx"
-  host: lookwhostalking.tk
+  host: lookwhostalking2.tk
 
 resources:
   # We usually recommend not to specify default resources and to leave this as a conscious
