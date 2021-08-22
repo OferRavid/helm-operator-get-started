@@ -26,3 +26,4 @@ Please install cert-manager if you want/need SSL:
   --version v1.5.1 \
   --set installCRDs=true
   """
+
