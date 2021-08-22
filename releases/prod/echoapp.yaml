@@ -2,21 +2,19 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: echoapp-dev
-  namespace: dev
+  name: echoapp-prod
+  namespace: prod
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: glob:dev-*
+    filter.fluxcd.io/chart-image: semver:~0.4
 spec:
-  releaseName: echoapp-dev
+  releaseName: echoapp-prod
   chart:
     git: git@github.com:OferRavid/helm-operator-get-started
     path: charts/echoapp
     ref: master
   values:
     image:
-      repository: stefanprodan/echoapp
-      tag: dev-hdtwcel9
-    replicaCount: 1
-    hpa:
-      enabled: false
+      repository: eu.gcr.io/develeap-bootcamp/echo
+      tag: 0.4.11
+    replicaCount: 3
