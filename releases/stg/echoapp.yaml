@@ -16,7 +16,7 @@ spec:
   values:
     image:
       repository: eu.gcr.io/develeap-bootcamp/echo
-      tag: stg-9ij63o4c
+      tag: stg-kwyaigb4
     replicaCount: 2
     hpa:
       enabled: true
