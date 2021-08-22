@@ -34,7 +34,7 @@ service:
 cert:
   name: letsencrypt-issue
   nspace: cert-manager
-  isStaging: false
+  isStaging: true
   server:
     prod: https://acme-v02.api.letsencrypt.org/directory
     stage: https://acme-staging-v02.api.letsencrypt.org/directory
