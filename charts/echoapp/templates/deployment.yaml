@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "echo-chart.fullname" . }}
+  name: {{ include "echoapp.fullname" . }}
   labels:
-    {{- include "echo-chart.labels" . | nindent 4 }}
+    {{- include "echoapp.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      {{- include "echo-chart.selectorLabels" . | nindent 6 }}
+      {{- include "echoapp.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        {{- include "echo-chart.selectorLabels" . | nindent 8 }}
+        {{- include "echoapp.selectorLabels" . | nindent 8 }}
     spec:
       containers:
         - name: {{ .Chart.Name }}

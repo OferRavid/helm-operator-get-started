@@ -8,6 +8,6 @@ dependencies:
   repository: https://charts.bitnami.com/bitnami
   version: 10.23.10
 description: A Helm chart for Kubernetes
-name: echo-chart
+name: echoapp
 type: application
-version: 1.0.0
+version: 1.0.1
