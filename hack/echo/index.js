@@ -31,7 +31,7 @@ if (!config.persist) {
 
 const echo = (req, res) => {
     logger.debug("Request: ", req)
-    logger.info("The Process Hostname is: ", req.headers.host)
+    logger.info("Echo App Hostname is: ", req.headers.host)
     const input = 'input' in req.query ? req.query.input : ''
     if (input.length == 0) {
         logger.error('User requested echo for empty string!')
