@@ -14,7 +14,7 @@ nameOverride: ""
 fullnameOverride: ""
 
 app:
-  name: ""
+  temp-var: something
   containerPort: 3000
 
 secret:
